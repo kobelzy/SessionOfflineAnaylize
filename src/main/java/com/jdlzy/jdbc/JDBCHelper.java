@@ -15,8 +15,8 @@ import java.util.LinkedList;
  * 也就是说，在代码中，是不能出现任何hard code（硬编码）的字符
  * 比如“张三”、“com.mysql.jdbc.Driver”
  * 所有这些东西，都需要通过常量来封装和使用
- *
- * @author zhuhongjin
+ * Created by liuziyang on 2017/9/11.
+ * Copyright © liuziyang ustl. All Rights Reserved
  *
  */
 public class JDBCHelper {
