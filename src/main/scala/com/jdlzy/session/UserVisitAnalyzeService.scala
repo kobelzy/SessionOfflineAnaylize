@@ -5,6 +5,6 @@ package com.jdlzy.session
   */
 object UserVisitAnalyzeService {
   def main(args: Array[String]): Unit = {
-
+any2ArrowAssoc()
   }
 }
