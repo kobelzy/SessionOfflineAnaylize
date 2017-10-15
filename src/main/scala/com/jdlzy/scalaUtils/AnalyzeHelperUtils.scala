@@ -2,10 +2,9 @@ package com.jdlzy.scalaUtils
 
 import com.jdlzy.constants.Constants
 import com.jdlzy.javautils.{ParamUtils, SqlUnits}
-import com.sun.rowset.internal.Row
 import groovy.sql.Sql
 import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.SQLContext
+import org.apache.spark.sql.{Row, SQLContext}
 import org.json.JSONObject
 
 
@@ -71,7 +70,7 @@ object AnalyzeHelperUtils {
     var sqlUserVisitAction:String="SELECT * FROM "+Constants.TABLE_USER_VISIT_ACTION
     //如果有日期限定
     if(startDate!=null){
-      val currentSql=" date >= \""+startDate+"|""
+      val currentSql=" date >= \""+startDate+"\""
         sqlUserVisitAction=SqlUnits.concatSQL(sqlUserVisitAction,currentSql)
     }
     //如果有关键字限定

@@ -60,7 +60,7 @@ object SparkUtils {
     val user_path=ConfigurationManager.getProperty(Constants.LOCAL_USER_DATA_PATH)
     val userRDD=sc.textFile(user_path).map(_.split(" "))
     val userRowRDD=userRDD.map(u=>{Row(u(0).toLong, u(2).trim, u(3).toInt, u(4).trim,
-      u(5).trim, u(6).trim) )})
+      u(5).trim, u(6).trim) })
     val userDataFrame=sqlContext.createDataFrame(userRowRDD,userSchema)
     //注册临时表
     userDataFrame.registerTempTable(Constants.TABLE_USER_INFO)
@@ -68,8 +68,7 @@ object SparkUtils {
     val productSchema=StructType(
       List(StructField("product_id",LongType,true),
         StructField("product_title",StringType,true),
-        StructField("extend_info",StringType,true
-        ))
+        StructField("extend_info",StringType,true)))
       //从指定位置创建RDD
       val product_path=ConfigurationManager.getProperty(Constants.LOCAL_PRODUCT_DATA_PATH)
     val productRDD=sc.textFile(product_path).map(_.split(" "))
@@ -77,6 +76,6 @@ object SparkUtils {
     val productDataFrame=sqlContext.createDataFrame(productRowRDD,productSchema)
     //注册为临时表
     productDataFrame.registerTempTable(Constants.TABLE_PRODUCT_INFO)
-    )
+
   }
 }

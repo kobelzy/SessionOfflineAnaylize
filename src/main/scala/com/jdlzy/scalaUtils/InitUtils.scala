@@ -18,7 +18,7 @@ object InitUtils {
     * @return
     */
   def initSparkContext(): (SparkContext, SQLContext) = {
-    val conf = new SparkConf()
+    val conf = getSparkConf()
     val sc = new SparkContext(conf)
     val sqlContext = getSqlContext(sc)
 
