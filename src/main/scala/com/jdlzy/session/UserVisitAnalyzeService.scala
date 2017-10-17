@@ -17,6 +17,7 @@ import org.json.JSONObject
   * Copyright © liuziyang ustl. All Rights Reserved
   */
 
+
 object UserVisitAnalyzeService {
   def main(args: Array[String]): Unit = {
 val context=InitUtils.initSparkContext()
