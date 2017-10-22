@@ -42,4 +42,31 @@ scan.setStartRow(Bytes.toBytes("rowkey0"));
         table.close();
         connection.close();
     }
+    public String concatenetedString(String s1, String s2) {
+        // write your code here
+        char[] char1s=s1.toCharArray();
+        char[] char2s=s2.toCharArray();
+        StringBuffer sb1=new StringBuffer("");
+        StringBuffer sb2=new StringBuffer("");
+        for(int i=0;i<char1s.length;i++){
+            Boolean flag=false;//默认第二个中没有重复的
+            for(int j=0;j<char2s.length;j++){
+                if(char1s[i]==char2s[j]){
+                    flag=true;
+                }
+            }
+            if(flag==false){ sb1.append(String.valueOf(char1s[i]));   }
+        }
+
+        for(int i=0;i<char2s.length;i++){
+            Boolean flag=false;//默认第二个中没有重复的
+            for(int j=0;j<char1s.length;j++){
+                if(char2s[i]==char1s[j]){
+                    flag=true;
+                }
+            }
+            if(flag==false) {sb2.append(String.valueOf(char2s[i])); }
+        }
+        return sb1.toString()+sb2.toString();
+    }
 }
