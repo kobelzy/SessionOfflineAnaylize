@@ -6,7 +6,6 @@ import org.apache.hadoop.hbase.client.ConnectionFactory
   */
 object HBaseTest {
   val str="232"
-  str.diff()
 val conf=HBaseConfiguration.create();
   val connection=ConnectionFactory.createConnection(conf)
   val table=connection.getTable(TableName.valueOf("tableName"));
